@@ -1,0 +1,19 @@
+.post-info {
+  margin-bottom: 1rem;
+}
+
+.post-info p, .post-info address {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  margin-top: 2rem;
+}
+
+.footer {
+  padding: 4rem 0;
+  margin-top: 4rem;
+  font-size: 85%;
+  background-color: #f7f7f7;
+}

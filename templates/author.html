@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block title %}{{ author }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+  <h1>Author {{ author }}</h1>
+  <dl>
+    {% for article in dates %}
+      <dt>{{ article.locale_date }}</dt>
+      <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+    {% endfor %}
+  </dl>
+{% endblock %}
