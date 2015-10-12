@@ -30,6 +30,13 @@
         <div class="collapse navbar-toggleable-xs" id="navbar">
           <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
           <ul class="nav navbar-nav">
+            {% if lang_siteurls %}
+              {% for lang, siteurl in lang_siteurls.items() %}
+                <li class="nav-item{% if lang == DEFAULT_LANG %} active{% endif %}">
+                  <a class="nav-link" href="{{ siteurl }}">{{ lang | lookup_lang_name }}</a>
+                </li>
+              {% endfor %}
+            {% endif %}
             {% for title, link in MENUITEMS %}
               <li class="nav-item">
                 <a class="nav-link" href="{{ link }}">{{ title }}</a>
