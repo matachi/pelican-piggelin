@@ -55,12 +55,22 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      dist: {
+      html: {
         files: [
           {
             expand: true,
             cwd: 'src/',
             src: 'templates/**',
+            dest: 'dist/'
+          },
+        ]
+      },
+      img: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/',
+            src: 'static/img/**',
             dest: 'dist/'
           },
         ]
@@ -74,7 +84,11 @@ module.exports = function(grunt) {
       },
       html: {
         files: ['src/templates/*.html'],
-        tasks: ['copy'],
+        tasks: ['copy:html'],
+      },
+      img: {
+        files: ['src/static/img/*'],
+        tasks: ['copy:img'],
       },
     },
 
