@@ -81,6 +81,10 @@ $font-family-base: $font-family-serif;
   margin-top: 2rem;
 }
 
+.articles > *:not(:first-child) {
+  margin-top: 60px;
+}
+
 .footer {
   padding: 4rem 0;
   margin-top: 4rem;
