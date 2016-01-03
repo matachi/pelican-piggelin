@@ -11,7 +11,7 @@
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700" rel="stylesheet" type="text/css">
 
     {% if FEED_ALL_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
@@ -22,13 +22,15 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-dark bg-inverse">
+    <nav class="navbar navbar-light" role="banner">
       <div class="container">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar">
-          &#9776;
-        </button>
-        <div class="collapse navbar-toggleable-xs" id="navbar">
+        <div class="brand-icon-container">
+          <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar">
+            &#9776;
+          </button>
           <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+        </div>
+        <div class="collapse navbar-toggleable-xs" id="navbar">
           <ul class="nav navbar-nav">
             {% if lang_siteurls %}
               {% for lang, siteurl in lang_siteurls.items() %}
@@ -60,6 +62,7 @@
         </div>
       </div>
     </nav>
+
     <div class="content container">
       {% block content %}{% endblock %}
     </div>
@@ -76,7 +79,7 @@
       </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
   </body>
 </html>

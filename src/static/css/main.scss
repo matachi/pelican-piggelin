@@ -1,5 +1,72 @@
-$font-family-serif:          "Libre Baskerville", Georgia, "Times New Roman", Times, serif;
-$font-family-base:           $font-family-serif;
+$brand-primary: #af50a5;
+
+$font-family-serif: "Libre Baskerville", serif;
+$font-family-base: $font-family-serif;
+
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+
+// Reset and dependencies
+@import "normalize";
+@import "print";
+
+// Core CSS
+@import "reboot";
+@import "type";
+@import "images";
+// @import "code";
+@import "grid";
+// @import "tables";
+// @import "forms";
+// @import "buttons";
+
+// Components
+@import "animation";
+// @import "dropdown";
+// @import "button-group";
+// @import "input-group";
+// @import "custom-forms";
+@import "nav";
+@import "navbar";
+// @import "card";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "pager";
+// @import "labels";
+// @import "jumbotron";
+// @import "alert";
+// @import "progress";
+// @import "media";
+// @import "list-group";
+// @import "responsive-embed";
+// @import "close";
+
+// Components w/ JavaScript
+// @import "modal";
+// @import "tooltip";
+// @import "popover";
+// @import "carousel";
+
+// Utility classes
+@import "utilities";
+// @import "utilities-background";
+// @import "utilities-spacing";
+@import "utilities-responsive";
+
+@include media-breakpoint-down(xs) {
+  .brand-icon-container {
+    @include clearfix();
+  }
+
+  nav .navbar-nav .nav-item {
+    float: none;
+  }
+
+  nav .navbar-nav .nav-item + .nav-item {
+    margin-left: 0;
+  }
+}
 
 .post-info {
   margin-bottom: 1rem;
@@ -27,54 +94,3 @@ blockquote {
   font-size: 17.5px;
   border-left: 5px solid #eee
 }
-
-// Core variables and mixins
-@import "variables";
-@import "mixins";
-
-// Reset and dependencies
-@import "normalize";
-@import "print";
-
-// Core CSS
-@import "reboot";
-@import "type";
-@import "images";
-@import "code";
-@import "grid";
-@import "tables";
-@import "forms";
-@import "buttons";
-
-// Components
-@import "animation";
-@import "dropdown";
-@import "button-group";
-@import "input-group";
-@import "custom-forms";
-@import "nav";
-@import "navbar";
-@import "card";
-@import "breadcrumb";
-@import "pagination";
-@import "pager";
-@import "labels";
-@import "jumbotron";
-@import "alert";
-@import "progress";
-@import "media";
-@import "list-group";
-@import "responsive-embed";
-@import "close";
-
-// Components w/ JavaScript
-@import "modal";
-@import "tooltip";
-@import "popover";
-@import "carousel";
-
-// Utility classes
-@import "utilities";
-@import "utilities-background";
-@import "utilities-spacing";
-@import "utilities-responsive";
