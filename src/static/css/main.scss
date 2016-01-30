@@ -1,7 +1,48 @@
-$brand-primary: #af50a5;
+/* Webfont: Overpass-Bold */@font-face {
+  font-family: 'Overpass';
+  src: url('/theme/fonts/Overpass-Bold.eot'); /* IE9 Compat Modes */
+  src: url('/theme/fonts/Overpass-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/theme/fonts/Overpass-Bold.woff') format('woff'), /* Modern Browsers */
+       url('/theme/fonts/Overpass-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/theme/fonts/Overpass-Bold.svg#Overpass-Bold') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
 
-$font-family-serif: "Libre Baskerville", serif;
-$font-family-base: $font-family-serif;
+/* Webfont: Overpass-Light */@font-face {
+  font-family: 'Overpass';
+  src: url('/theme/fonts/Overpass-Light.eot'); /* IE9 Compat Modes */
+  src: url('/theme/fonts/Overpass-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/theme/fonts/Overpass-Light.woff') format('woff'), /* Modern Browsers */
+       url('/theme/fonts/Overpass-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/theme/fonts/Overpass-Light.svg#Overpass-Light') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Overpass-LightItalic */@font-face {
+  font-family: 'Overpass';
+  src: url('/theme/fonts/Overpass-Light-Italic.eot'); /* IE9 Compat Modes */
+  src: url('/theme/fonts/Overpass-Light-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/theme/fonts/Overpass-Light-Italic.woff') format('woff'), /* Modern Browsers */
+       url('/theme/fonts/Overpass-Light-Italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/theme/fonts/Overpass-Light-Italic.svg#Overpass-LightItalic') format('svg'); /* Legacy iOS */
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+$brand-primary: #AA0001;
+
+$font-family-sans-serif: "Overpass", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-root: 18px;
+$font-size-h1: 2.3rem;
+
+$headings-font-weight: 700;
 
 // Core variables and mixins
 @import "variables";
@@ -54,6 +95,18 @@ $font-family-base: $font-family-serif;
 // @import "utilities-spacing";
 @import "utilities-responsive";
 
+@include media-breakpoint-down(lg) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
 @include media-breakpoint-down(xs) {
   .brand-icon-container {
     @include clearfix();
@@ -70,12 +123,18 @@ $font-family-base: $font-family-serif;
 
 .post-info {
   margin-bottom: 1rem;
+
+  abbr[title] {
+    border-bottom: 0;
+    text-decoration: none;
+  }
+
+  p, address {
+    margin: 0;
+    padding: 0;
+  }
 }
 
-.post-info p, .post-info address {
-  margin: 0;
-  padding: 0;
-}
 
 .content {
   margin-top: 2rem;

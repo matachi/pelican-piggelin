@@ -75,6 +75,16 @@ module.exports = function(grunt) {
           },
         ]
       },
+      fonts: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/',
+            src: 'static/fonts/**',
+            dest: 'dist/'
+          },
+        ]
+      },
     },
 
     watch: {
@@ -89,6 +99,10 @@ module.exports = function(grunt) {
       img: {
         files: ['src/static/img/*'],
         tasks: ['copy:img'],
+      },
+      fonts: {
+        files: ['src/static/fonts/*'],
+        tasks: ['copy:fonts'],
       },
     },
 
